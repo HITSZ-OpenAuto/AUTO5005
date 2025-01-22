@@ -1,0 +1,897 @@
+
+\documentclass[8pt]{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Boadilla}
+  % or ...
+
+  \setbeamercovered{transparent}
+}
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage[english]{babel}
+% or whatever
+
+% fonts
+\usepackage[utf8]{inputenc}
+% or whatever
+\usefonttheme[onlymath]{serif}
+% \usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{newtxtext}
+
+\usepackage[thicklines]{cancel}
+
+\renewcommand{\baselinestretch}{1.2}
+\let\tempone\itemize
+\let\temptwo\enditemize
+\newenvironment{proitemize}{\vspace{-1em}\tempone}{\temptwo}%{\tempone\addtolength{\itemsep}{0.5\baselineskip}}{\temptwo}
+% \usepackage{enumitem}
+% \setlength{\parindent}{0pt}
+% \usepackage{wrapfig}
+\usepackage[many]{tcolorbox}
+
+\title[Homework Solutions] % (optional, use only with long paper titles)
+{Homework Solutions}
+
+\subtitle
+{Nonlinear and Adaptive Control}
+
+\author[Oliver Wu] % (optional, use only with lots of authors)
+{Oliver Wu}
+% {F.~Author\inst{1} \and S.~Another\inst{2}}
+
+% \institute[Universities of Somewhere and Elsewhere] % (optional, but mostly needed)
+% {
+  % \inst{1}%
+  % Department of Computer Science\\
+  % University of Somewhere
+  % \and
+  % \inst{2}%
+  % Department of Theoretical Philosophy\\
+  % University of Elsewhere}
+
+\date[\today] % (optional, should be abbreviation of conference name)
+{\today}
+
+% \subject{Theoretical Computer Science}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+\section{Problem 1}
+
+\begin{frame}[t]{Problem 1}%{Subtitles are optional.}
+  \begin{block}{}
+    Consider the system defined by the following equations:
+  \begin{align*}
+      \dot x_1=&~\frac{2}{3}x_2\\
+      \dot x_2=&~-x_1+x_2(1-3x_1^2-2x_2^2)
+  \end{align*}
+  \begin{proitemize}
+    \item[(a)] Show that the points defined by (i) $x=(0,0)$ and (ii) $1-(3x_1^2+2x_2^2)=0$ are invariant sets.
+    \item[(b)] Study the stability of the origin and the invariant set $1-(3x_1^2+2x_2^2)=0$, respectively, using LaSalle's Invariant Theorem.
+  \end{proitemize}
+  \end{block}
+  \begin{theorem}[LaSalle]
+    \small
+    For autonomous system
+    \begin{equation}
+      \dot{x}=f(x)
+    \end{equation}
+    where $f:D\to\mathbb{R}^n$ is a continuous and differentiable function, $D\subset\mathbb{R}^n$ is a field containing the origin. Suppose that
+    \begin{itemize}
+      \item $\Omega\subset D$ is a compact positive invariant set;
+      \item $V:D\to\mathbb{R}$ is a continuous and differentiable function, and $\dot{V}(x)\le 0, \forall x\in \Omega$;
+      \item $E=\{x\in\Omega: \dot{V}(x)= 0\}$;
+      \item $M$ is the largest invariant set in $E$.
+    \end{itemize}
+    Then every solution starting in $\Omega$ approaches $M$ as $t\to\infty$.
+  \end{theorem}
+\end{frame}
+
+\begin{frame}[t]{Problem 1 (a)}%{Subtitles are optional.}
+  \begin{block}{}
+  Consider the system defined by the following equations:
+  \begin{align*}
+    \dot x_1=&~\frac{2}{3}x_2\\
+    \dot x_2=&~-x_1+x_2(1-3x_1^2-2x_2^2)
+\end{align*}
+  \begin{proitemize}
+    \item[(a)] Show that the points defined by (i) $x=(0,0)$ and (ii) $1-(3x_1^2+2x_2^2)=0$ are invariant sets.
+  \end{proitemize}
+\end{block}
+  {\bf Solution:}
+  For (i), $x=(0,0)$ implies that the system equation becomes
+  \begin{align*}
+    \dot x_1=&~0\\
+    \dot x_2=&~0
+\end{align*}
+  Hence, if we have $x(0)=0,t=t_0$, then $\forall t \ge t_0, \ x(t)\equiv 0$. Therefore, $x=(0,0)$ is an invariant set.
+  % is the equilibrium point of the system. 
+\end{frame}
+
+\begin{frame}[t]{Problem 1 (a) (Cont.)}%{Subtitles are optional.}
+  \begin{block}{}
+  Consider the system defined by the following equations:
+  \begin{align*}
+    \dot x_1=&~\frac{2}{3}x_2\\
+    \dot x_2=&~-x_1+x_2(1-3x_1^2-2x_2^2)
+\end{align*}
+  \begin{proitemize}
+    \item[(a)] Show that the points defined by (i) $x=(0,0)$ and (ii) $1-(3x_1^2+2x_2^2)=0$ are invariant sets.
+  \end{proitemize}
+\end{block}
+  {\bf Solution:}
+        For (ii), the system equation becomes
+        \begin{align*}
+          \dot x_1=&~\frac{2}{3}x_2\\
+          \dot x_2=&~-x_1
+      \end{align*}
+        Consider function $f(x_1,x_2)=3x_{1}^{2}+2x_{2}^{2}$, we have 
+        $$\dot{f}=6x_1\dot{x}_1+4x_2\dot{x}_2=0$$
+        integrating both sides yields $$f(x_1,x_2)=3x_{1}^{2}+2x_{2}^{2}\equiv 1, \forall t\geq t_0$$
+        which implies that any trajectory starting at $(x_1,x_2)$ that satisfies $1-(3x_{1}^{2}+2x_{2}^{2}) = 0$ stays on this trajectory function. Therefore,  $1-(3x_{1}^{2}+2x_{2}^{2}) = 0$ is an invariant set.
+        % which implies any trajectory initiating on the ellipse stays on the ellipse for all future time, i.e. $S$ is an invariant set.
+\end{frame}
+
+\begin{frame}[t]{Problem 1 (b)}%{Subtitles are optional.}
+  \begin{block}{}
+  Consider the system defined by the following equations:
+  \begin{align*}
+    \dot x_1=&~\frac{2}{3}x_2\\
+    \dot x_2=&~-x_1+x_2(1-3x_1^2-2x_2^2)
+\end{align*}
+  \begin{proitemize}
+    \item[(b)] Study the stability of the origin and the invariant set $1-(3x_1^2+2x_2^2)=0$, respectively, using LaSalle's Invariant Theorem.
+  \end{proitemize}
+\end{block}
+  {\bf Solution:}
+  For the origin, consider $V(x)=\frac{3}{4}x_1^2+\frac{1}{2}x_2^2$. Its derivative along the trajectory is
+  \begin{align*}
+     \dot{V}(x)&=\frac{3}{2}x_1\dot{x}_1+x_2\dot{x}_2\\
+     &=x_1x_2+x_2(-x_1+x_2(1-3x_1^2-2x_2^2)) \\
+     &=x_2^2(1-3x_1^2-2x_2^2)
+  \end{align*} 
+  which is positive definite in the neighborhood of origin. Therefore, \textbf{the origin is not stable}.
+\end{frame}
+
+\begin{frame}[t]{Problem 1 (b) (Cont.)}%{Subtitles are optional.}
+  \begin{block}{}
+  Consider the system defined by the following equations:
+  \begin{align*}
+    \dot x_1=&~\frac{2}{3}x_2\\
+    \dot x_2=&~-x_1+x_2(1-3x_1^2-2x_2^2)
+\end{align*}
+  \begin{proitemize}
+    \item[(b)] Study the stability of the origin and the invariant set $1-(3x_1^2+2x_2^2)=0$, respectively, using LaSalle's Invariant Theorem.
+  \end{proitemize}
+\end{block}
+  {\bf Solution:} For the invariant set $S=\{(x_1,x_2)|3x_1^2+2x_2^2=1\}$, consider $V(x)=\frac{1}{8}(1-3x_1^2-2x_2^2)^2$. Its derivative along the trajectory is
+  \begin{align*}
+     \dot{V}(x)&=\frac{1}{4}(3x_1^2+2x_2^2-1)(6x_1\dot{x}_1+4x_2\dot{x}_2)\\
+     &=\frac{1}{4}(3x_1^2+2x_2^2-1)(-4x_2^2(3x_1^2+2x_2^2-1)) \\
+     &=-x_2^2(3x_1^2+2x_2^2-1)^2 \le 0 
+  \end{align*} 
+  \begin{block}{Note}
+    $V$ evaluates the ``distance'' from the limit cycle. Note that $V$ need not to be positive definite. 
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]{Problem 1 (b) (Cont.)}%{Subtitles are optional.}
+  \begin{block}{}
+  Consider the system defined by the following equations:
+  \begin{align*}
+    \dot x_1=&~\frac{2}{3}x_2\\
+    \dot x_2=&~-x_1+x_2(1-3x_1^2-2x_2^2)
+\end{align*}
+  \begin{proitemize}
+    \item[(b)] Study the stability of the origin and the invariant set $1-(3x_1^2+2x_2^2)=0$, respectively, using LaSalle's Invariant Theorem.
+  \end{proitemize}
+\end{block}
+  {\bf Solution:} 
+  \begin{align*}
+    V(x)&=\frac{1}{8}(1-3x_1^2-2x_2^2)^2,\quad
+     \dot{V}(x)=-x_2^2(3x_1^2+2x_2^2-1)^2 \le 0 
+  \end{align*} 
+  
+  Consider $\Omega_C=\{x \in \mathbb{R}^2|V(x) \le c\}$. We know from the derivative above that it's an invariant set. 
+  
+  Then consider $E=\{x \in \Omega_C | \dot{V}=0 \}$, We have $E=S \cup \{x \in \Omega_C|x_2=0\}$. 
+  
+  Define $M$ as the largest invariant set in $E$, i.e. $M=S \cup (0,0)$.
+
+  Choose $c \in (0,\frac{1}{8})$, $\Omega_C$ includes the ellipse but not the origin. Then LaSalle's Theorem shows that every motion initiating in $\Omega_C$ converges to the limit cycle, and therefore \textbf{$S$ is stable}.
+
+  \begin{block}{Note}
+    {\small Choose $c=\frac{1}{8}-\varepsilon$, where $\varepsilon>0$ is an arbitrarily small number, we can show that states initiating in any neighborhood of the origin will not approach the origin, which also implies that the origin is not stable.}
+  \end{block}
+\end{frame}
+
+% \begin{frame}{Make Titles Informative.}
+
+%   You can create overlays\dots
+%   \begin{itemize}
+%   \item using the \texttt{pause} command:
+%     \begin{itemize}
+%     \item
+%       First item.
+%       \pause
+%     \item    
+%       Second item.
+%     \end{itemize}
+%   \item
+%     using overlay specifications:
+%     \begin{itemize}
+%     \item<3->
+%       First item.
+%     \item<4->
+%       Second item.
+%     \end{itemize}
+%   \item
+%     using the general \texttt{uncover} command:
+%     \begin{itemize}
+%       \uncover<5->{\item
+%         First item.}
+%       \uncover<6->{\item
+%         Second item.}
+%     \end{itemize}
+%   \end{itemize}
+% \end{frame}
+
+
+
+
+\section{Problem 2}
+
+\begin{frame}[t]{Problem 2}
+  It is known that a given dynamical system with the state $x=(x_1,x_2)$ has an equilibrium point at the origin. For this system, a function $V(\cdot)$ have been proposed, and its derivative $\dot V(\cdot)$
+has been computed. Assuming that $V(\cdot)$ and $\dot V(\cdot)$ are given below you are asked to classify the origin, in each case, as (a) stable, (b) locally uniformly asymptotically stable, and/or (c) globally uniformly asymptotically stable. Explain you answer in each case.
+
+\begin{itemize}
+    \item[(i)] $V(x,t)=x_1^2+x_2^2$, $\dot V(x,t)=-x_1^2$.
+    \item[(ii)] $V(x,t)=x_1^2+x_2^2$, $\dot V(x,t)=-(x_1^2+x_2^2)e^{-t}$.
+    \item[(iii)] $V(x,t)=x_1^2+x_2^2$, $\dot V(x,t)=-(x_1^2+x_2^2)e^{t}$.
+    \item[(iv)] $V(x,t)=(x_1^2+x_2^2)e^t$, $\dot V(x,t)=-(x_1^2+x_2^2)(1+\sin^2t)$.
+    \item[(v)] $V(x,t)=(x_1^2+x_2^2)e^{-t}$, $\dot V(x,t)=-(x_1^2+x_2^2)$.
+    \item[(vi)] $V(x,t)=(x_1^2+x_2^2)(1+e^{-t})$, $\dot V(x,t)=-x_1^2e^{-t}$.
+    \item[(vii)] $V(x,t)=(x_1^2+x_2^2)(1+\cos^2t)$, $\dot V(x,t)=-(x_1^2+x_2^2)e^{-t}$.
+    \item[(viii)] $V(x,t)=(x_1^2+x_2^2)(1+\cos^2t)$, $\dot V(x,t)=-(x_1^2+x_2^2)(1+e^{-t})$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Problem 2}
+
+\begin{itemize}
+    \item[(i)] $V(x,t)=x_1^2+x_2^2$, $\dot V(x,t)=-x_1^2$.
+    
+    {\bf Solution:} Let $W_1(x)=x_1^2+x_2^2$ and $W_2(x)=2x_1^2+2x_2^2$, we have 
+    \begin{align*}
+        W_1(x)&=V(x,t) \le W_2(x),\quad\dot V(x,t) \le 0.
+    \end{align*}
+    Thus, $V$ is positive definite and decrescent, and $\dot{V}$ is negative semidefinite. 
+    
+    If $x_1=0, x_2\neq 0$, then $\dot{V}=0$, while any positive definite function has a positive value. Hence, we cannot find a proper positive definite function $W_3(x)$ such that $\dot V(x,t) \le -W_3(x)$. 
+    
+    Therefore, the origin is \textbf{(uniformly) stable}.
+
+    \item[(ii)] $V(x,t)=x_1^2+x_2^2$, $\dot V(x,t)=-(x_1^2+x_2^2)e^{-t}$.
+    
+    {\bf Solution:} Let $W_1(x)=x_1^2+x_2^2$ and $W_2(x)=2x_1^2+2x_2^2$. Analogous to (i), $V$ is positive definite and decrescent, and $\dot{V}$ is negative semidefinite.
+    
+    Note that $\dot V(x,t)$ can become arbitrarily small when $t$ is sufficiently large. 
+    Hence we cannot find a proper positive definite function $W_3(x)$ such that $\dot V(x,t) \le -W_3(x)$. 
+    
+    Therefore, the origin is \textbf{(uniformly) stable}.
+
+    \item[(iii)] $V(x,t)=x_1^2+x_2^2$, $\dot V(x,t)=-(x_1^2+x_2^2)e^{t}$.
+    
+    {\bf Solution:} Let $W_1(x)=x_1^2+x_2^2$,  $W_2(x)=2x_1^2+2x_2^2$, and $W_3(x)=x_1^2+x_2^2$, we have 
+    \begin{align*}
+        &W_1(x)=V(x,t) \le W_2(x),\quad \dot V(x,t) \le -W_3(x).
+    \end{align*}
+    Additionally, $W_1(x)$ is radially unbounded. Therefore, the origin is \textbf{globally uniformly asymptotically stable}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Problem 2}
+  \begin{itemize}
+    \item[(iv)] $V(x,t)=(x_1^2+x_2^2)e^t$, $\dot V(x,t)=-(x_1^2+x_2^2)(1+\sin^2t)$.
+    
+    {\bf Solution:} Choose $W_1(x)=x_1^2+x_2^2$, We see that $V(x,t)\ge W_1(x)$, which implies that $V$ is positive definite.
+    Choose $W_3(x)=x_1^2+x_2^2$, we also have $\dot V(x,t)\le -W_3(x)$, which implies that $\dot V$ is negative definite.
+    However, $V$ is not decrescent since as $t\to\infty$, $V(x,t)\to\infty$. 
+    
+    We then consider the function \[V'(x,t)=V(x,t)e^{-t}=x_1^2+x_2^2\]
+    Thus we have $W_1(x)\triangleq x_1^2+x_2^2=V'(x,t)\le 2(x_1^2+x_2^2)\triangleq W_2(x)$. And the derivative should be 
+    \begin{align*}
+        \dot V'(x,t)&=\dot V(x,t)e^{-t}-V(x,t)e^{-t}\\
+        &=-(x_1^2+x_2^2)(1+\sin^2t)e^{-t}-(x_1^2+x_2^2)\\
+        &\le -(x_1^2+x_2^2)\triangleq -W_3(x).
+    \end{align*}
+    With $W_1(x)$ radially unbounded, we conclude that the origin is \textbf{globally uniformly asymptotically stable}.
+  \end{itemize}
+  \begin{block}{Note}
+    The Lyapunov stability theorem is only sufficient!
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]{Problem 2}
+  \begin{itemize}
+    \item[(v)] $V(x,t)=(x_1^2+x_2^2)e^{-t}$, $\dot V(x,t)=-(x_1^2+x_2^2)$.
+    
+    {\bf Solution:} We cannot find a positive definite function $W_1(x)$ such that $V(x,t) \ge W_1(x)$, which shows $V(x,t)$ is positive definite. 
+    
+    Consider a new Lyapunov function $V'(x,t)=V(x,t)e^{t}=x_1^2+x_2^2$. Analogous to (iv), it's positive definite and decrescent,
+    and its derivative should be 
+    \begin{align*}
+        \dot V'(x,t)&=\dot V(x,t)e^{t}+V(x,t)e^{t}\\
+        &=(x_1^2+x_2^2)(1-e^t)\le 0
+    \end{align*}
+    Therefore, the origin is \textbf{uniformly stable}.
+  \end{itemize}
+  \begin{block}{Note}
+    The Lyapunov stability theorem is only sufficient!
+  \end{block}
+  \begin{itemize}
+  \item[(vi)] $V(x,t)=(x_1^2+x_2^2)(1+e^{-t})$, $\dot V(x,t)=-x_1^2e^{-t}$.
+    
+    {\bf Solution:} Let $W_1(x)=x_1^2+x_2^2$ and $W_2(x)=2x_1^2+2x_2^2$, and then we have 
+    \begin{align*}
+        W_1(x) &\le V(x,t) \le W_2(x),\quad \dot V(x,t) \le 0.
+    \end{align*}
+    Analogous to (i), we cannot find a proper positive definite function $W_3(x)$ such that $\dot V(x,t) \le -W_3(x)$. Therefore, the origin is \textbf{(uniformly) stable}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Problem 2}
+  \begin{itemize}
+    \item[(vii)] $V(x,t)=(x_1^2+x_2^2)(1+\cos^2t)$, $\dot V(x,t)=-(x_1^2+x_2^2)e^{-t}$.
+    
+    Let $W_1(x)=x_1^2+x_2^2$ and $W_2(x)=2x_1^2+2x_2^2$, and then we have 
+    \begin{align*}
+        &W_1(x) \le V(x,t) \le W_2(x),\quad \dot V(x,t) \le 0.
+    \end{align*}
+    Analogous to (ii), we cannot find a proper positive definite function $W_3(x)$ such that $\dot V(x,t) \le -W_3(x)$. Therefore, the origin is \textbf{(uniformly) stable}.
+
+    \item[(viii)] $V(x,t)=(x_1^2+x_2^2)(1+\cos^2t)$, $\dot V(x,t)=-(x_1^2+x_2^2)(1+e^{-t})$.
+    
+    Let $W_1(x)=x_1^2+x_2^2$, $W_2(x)=2x_1^2+2x_2^2$, $W_3(x)=x_1^2+x_2^2$ and then we have 
+    \begin{align*}
+        &W_1(x) \le V(x,t) \le W_2(x) ,\quad \dot V(x,t) \le -W_3(x).
+    \end{align*}
+    With $W_1(x)$ radially unbounded, we conclude that the origin is \textbf{globally uniformly asymptotically stable}.
+
+  \end{itemize}
+\end{frame}
+
+\section{Problem 3}
+\begin{frame}[t]{Problem 3}
+  \begin{block}{}
+  A pendulum with time-varying friction is represented by
+\begin{align*}
+\dot x_1=&~x_2,\\
+\dot x_2=&~-\sin x_1-g(t)x_2.
+\end{align*}
+Suppose that $g(t)$ is continuously differentiable and satisfies
+\begin{align*}
+0<a<\alpha\leq g(t)\leq \beta<\infty ~~~~~\mbox{and}~~~~~~\dot g(t)\leq \gamma<2
+\end{align*}
+for all $t\geq 0$. Consider the Lyapunov function candidate
+\begin{align*}
+V(t,x)=\frac{1}{2}(a\sin x_1+x_2)^2+[1+ag(t)-a^2](1-\cos x_1)
+\end{align*}
+\begin{proitemize}
+\item[(a)] Show that $V(t,x)$ is positive definite and decrescent.
+
+\item[(b)]
+Show that
+\begin{align*}
+\dot V\leq-(\alpha-a)x_2^2-a(2-\gamma)(1-\cos x_1)+O(\|x\|^3),
+\end{align*}
+where $O(\|x\|^3)$ is a term bounded by $k\|x\|^3$ in some neighborhood of the origin.
+
+\item[(c)] Show that the origin is uniformly asymptotically stable.
+\end{proitemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[t]{Problem 3 (a)}
+  \begin{block}{}
+  A pendulum with time-varying friction is represented by
+\begin{align*}
+\dot x_1=&~x_2,\\
+\dot x_2=&~-\sin x_1-g(t)x_2.
+\end{align*}
+Suppose that $g(t)$ is continuously differentiable and satisfies
+\begin{align*}
+0<a<\alpha\leq g(t)\leq \beta<\infty ~~~~~\mbox{and}~~~~~~\dot g(t)\leq \gamma<2
+\end{align*}
+for all $t\geq 0$. Consider the Lyapunov function candidate
+\begin{align*}
+V(t,x)=\frac{1}{2}(a\sin x_1+x_2)^2+[1+ag(t)-a^2](1-\cos x_1)
+\end{align*}
+\begin{proitemize}
+\item[(a)] Show that $V(t,x)$ is positive definite and decrescent.
+\end{proitemize}
+\end{block}
+{\bf Proof:}
+\begin{align*}
+  V(t,x)&>\frac{1}{2}(a\sin x_1+x_2)^2+2\sin^2{\frac{x_1}{2}} [1+a^2-a^2] \\
+  &=\frac{1}{2}(a\sin x_1+x_2)^2+2\sin^2\frac{x_1}{2}=W_1(x)
+\end{align*}
+Let $D=\{(x_1,x_2)|x_1 \in [-\pi,\pi],x_2 \in \mathbb{R} \}$, then $W_1(x)\ge0$, and $x_1=x_2=0\iff W_1(x)=0$. Therefore, $W_1(x)$ is positive definite and $V(t,x)$ is positive definite.
+
+\end{frame}
+
+\begin{frame}[t]{Problem 3 (a) (Cont.)}
+  \begin{block}{}
+  A pendulum with time-varying friction is represented by
+\begin{align*}
+\dot x_1=&~x_2,\\
+\dot x_2=&~-\sin x_1-g(t)x_2.
+\end{align*}
+Suppose that $g(t)$ is continuously differentiable and satisfies
+\begin{align*}
+0<a<\alpha\leq g(t)\leq \beta<\infty ~~~~~\mbox{and}~~~~~~\dot g(t)\leq \gamma<2
+\end{align*}
+for all $t\geq 0$. Consider the Lyapunov function candidate
+\begin{align*}
+V(t,x)=\frac{1}{2}(a\sin x_1+x_2)^2+[1+ag(t)-a^2](1-\cos x_1)
+\end{align*}
+\begin{proitemize}
+\item[(a)] Show that $V(t,x)$ is positive definite and decrescent.
+\end{proitemize}
+\end{block}
+{\bf Proof:}
+\begin{align*}
+  V(t,x) & \le \frac{1}{2}(a\sin x_1+x_2)^2+(1+a\beta-a^2)(1-\cos x_1)=W_2(x) 
+\end{align*}
+Since $1+a\beta-a^2 > 0$, $W_2(x)\ge 0$; and we have $x_1=x_2=0\iff W_2(x)=0$. Hence, $W_2(x)$ is positive definite. Thus $V(t,x)$ is decrescent.
+
+\end{frame}
+
+\begin{frame}[t]{Problem 3 (b)}
+  \begin{block}{}
+\begin{itemize}
+\item[(b)] Show that
+\begin{align*}
+\dot V\leq-(\alpha-a)x_2^2-a(2-\gamma)(1-\cos x_1)+O(\|x\|^3),
+\end{align*}
+where $O(\|x\|^3)$ is a term bounded by $k\|x\|^3$ in some neighborhood of the origin.
+\end{itemize}
+\end{block}
+{\bf Proof:}
+\begin{align*}
+  \dot{V}(t,x) &= \frac{\partial V}{\partial t} + \frac{\partial V}{\partial x}f(t,x) \\
+  &\tcboxmath[fontupper=\footnotesize,colback=blue!25!white,colframe=blue,left=5pt,right=5pt,top=1pt,bottom=1pt]{\begin{aligned}
+    V(t,x)=\frac{1}{2}(a\sin x_1+x_2)^2+[1+ag(t)-a^2](1-\cos x_1)
+    \end{aligned}}\\
+  &=a\dot{g}(t)(1-\cos x_1)+[(a\sin x_1+x_2)(a \cos x_1)+(1+ag(t)-a^2)\sin x_1]\dot x_1 + (a \sin x_1 +x_2)\dot x_2\\
+  &  \tcboxmath[fontupper=\footnotesize,colback=blue!25!white,colframe=blue,left=5pt,right=5pt,top=1pt,bottom=1pt]{ \begin{aligned}
+      \dot x_1=~x_2,
+      \dot x_2=~-\sin x_1-g(t)x_2
+      \end{aligned}    }  \\
+  &= a\dot{g}(t)(1-\cos x_1)+[(a\sin x_1+x_2)(a \cos x_1)+(1+ag(t)-a^2)\sin x_1]x_2\\
+  &\quad + (a \sin x_1 +x_2)(-\sin x_1-g(t)x_2)\\
+  &=a\dot{g}(t)(1-\cos x_1)+(a\sin x_1+x_2)(a \cos x_1)x_2+\cancel{x_2\sin x_1}+\cancel{ag(t)x_2\sin x_1}-a^2x_2\sin x_1\\
+  &\quad -a\sin^2x_1-\cancel{ag(t)x_2\sin x_1}-\cancel{x_2\sin x_1}-g(t)x_2^2\\
+  &=a\dot{g}(t)(1-\cos x_1)+a^2x_2\sin x_1\cos x_1+ax_2^2\cos x_1-a^2x_2\sin x_1-a\sin^2x_1-g(t)x_2^2
+\end{align*}
+\end{frame}
+
+\begin{frame}[t]{Problem 3 (b) (Cont.)}
+  \begin{block}{}
+\begin{itemize}
+\item[(b)] Show that
+\begin{align*}
+\dot V\leq-(\alpha-a)x_2^2-a(2-\gamma)(1-\cos x_1)+O(\|x\|^3),
+\end{align*}
+where $O(\|x\|^3)$ is a term bounded by $k\|x\|^3$ in some neighborhood of the origin.
+\end{itemize}
+\end{block}
+{\bf Proof:}
+\begin{align*}
+  \dot{V}(t,x) &=a\dot{g}(t)(1-\cos x_1)+\textcolor{blue}{a^2x_2\sin x_1\cos x_1}+\textcolor{magenta}{ax_2^2\cos x_1}-\textcolor{blue}{a^2x_2\sin x_1}-a\sin^2x_1-\textcolor{magenta}{g(t)x_2^2}\\
+  &=\textcolor{magenta}{(a\cos x_1-g(t))x_2^2}+a\dot{g}(t)(1-\cos x_1)+\textcolor{blue}{a^2x_2\sin x_1(\cos x_1-1)}-a(1-\cos^2x_1)\\
+  &=-(g(t)-a\cos x_1)x_2^2-a(\textcolor{red}{2}-\dot{g}(t))(1-\cos x_1)+a^2x_2\sin x_1(\cos x_1-1)\\
+  &\quad -a(\textcolor{red}{-2}+1+\cos x_1)(1-\cos x_1)\\
+  &\tcboxmath[fontupper=\footnotesize,colback=blue!25!white,colframe=blue,left=5pt,right=5pt,top=1pt,bottom=1pt]{\begin{aligned}
+      0<a<\alpha\leq g(t)\leq \beta<\infty ~~~~~\mbox{and}~~~~~~\dot g(t)\leq \gamma<2
+    \end{aligned}}\\
+  &\leq-(\alpha-a)x_2^2-a(2-\gamma)(1-\cos x_1) +a^2x_2\sin x_1(\cos x_1-1) +a(1-\cos x_1)^2\\
+  &\tcboxmath[fontupper=\footnotesize,colback=blue!25!white,colframe=blue,left=5pt,right=5pt,top=1pt,bottom=1pt]{\begin{aligned}
+    \cos x_1=1-\frac{1}{2}x_1^2+O(\|x\|^4),\sin x_1=x_1+O(\|x\|^3)
+  \end{aligned}}\\
+  &=-(\alpha-a)x_2^2-a(2-\gamma)(1-\cos x_1) +a^2x_2(O(\|x_1\|))(O(\|x_1\|^2)) +a(O(\|x_1\|^2))^2\\
+  &=-(\alpha-a)x_2^2-a(2-\gamma)(1-\cos x_1) +O(\|x\|^3)
+\end{align*}
+\end{frame}
+
+\begin{frame}[t]{Problem 3 (c)}
+  \begin{block}{}
+\begin{itemize}
+  \item[(c)] Show that the origin is uniformly asymptotically stable.
+\end{itemize}
+\end{block}
+{\bf Proof:}
+    \begin{align*}
+      \dot V&\leq-(\alpha-a)x_2^2-a(2-\gamma)(1-\cos x_1)+O(\|x\|^3)\\
+       &\leq -(\alpha-a)x_2^2-a(2-\gamma)\left(\frac{1}{2}x_1^2+O(\|x\|^4)\right)+O(\|x\|^3) \\
+        &=-(\alpha-a)x_2^2-\frac{a(2-\gamma)}{2}x_1^2+O(\|x\|^3)
+    \end{align*}
+    Let $k=\min\{\alpha-a,\frac{a(2-\gamma)}{2}\}$, and we have \[\dot V\le -k\|x\|^2+O(\|x\|^3)=-\|x\|^2\left(k-\frac{O(\|x\|^3)}{\|x\|^2}\right)\]
+    
+    Define $W_3(x)=\|x\|^2\left(k-\frac{O(\|x\|^3)}{\|x\|^2}\right)$. Since $\frac{O(\|x\|^3)}{\|x\|^2} \to 0$ as $\|x\|\to 0$, we have 
+    \[\forall \varepsilon>0,\exists \delta>0, \text{s.t.}\ \|x\|\le\delta, \left\|\frac{O(\|x\|^3)}{\|x\|^2}\right\|\le\varepsilon\]
+    Choose $\varepsilon=\frac{1}{2}k$, then $W_3(x)$ is positive definite in the neighborhood corresponding to this $\varepsilon$.
+
+    From (a), $V(t,x)$ is positive definite and decresent. Therefore, the origin is (locally) uniformly asymptotically stable.
+\end{frame}
+
+\section{Problem 4}
+\begin{frame}[t]{Problem 4}
+  \begin{block}{}
+    We denote by $|x|$ the absolute value of $x$ if $x$ is scalar and the euclidean norm of $x$ is $x$ is a
+vector. For functions of time, the $L_2$ norm is given by
+\begin{align*}
+\|x\|_p=\left(\int_0^{\infty}|x(\tau)|^p\mbox{d}\tau\right)^{\frac{1}{p}},
+\end{align*}
+for $p\in[1,\infty]$, while
+\begin{align*}
+\|x\|_{\infty}=\sup_{t\geq 0} |x(t)|.
+\end{align*}
+We say that $x\in\mathbb{L}_p$ when $\|x\|_p<\infty$.
+
+
+\begin{itemize}
+\item[(a)] Write down the Barbalat's lemma, the Lyapunov-like lemma, and the Lashalle-Yoshizawa theorem.
+\item[(b)] Use Barbalat's lemma to prove the Lyapunov-like lemma, Lashalle-Yoshizawa theorem, and the following corollary.
+
+\textbf{Corollary}: If $x\in \mathbb{L}_2\bigcap\mathbb{L}_{\infty}$ and $\dot x\in \mathbb{L}_{\infty}$, then $\lim\limits_{t\to\infty}x(t)=0$.
+\end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]{Problem 4 (Cont.)}{Barbalat's lemma and Lyapunov-like lemma}
+  \begin{lemma}[Barbalat]
+    \small If a differentiable function $f(t)$ has a finite limit as $t \to \infty$, and if $\dot f(t)$ is uniformly continuous, then $\lim\limits_{t \to \infty}\dot f(t)=0$.
+  \end{lemma} 
+
+  \begin{lemma}[Lyapunov-like]
+    \small If a scalar function $V(t,x)$ satisfies the following conditions:
+    \begin{itemize}
+        \item $V(t,x)$ is lower bounded,
+        \item $\dot V(t,x)$ is negative semi-definite,
+        \item $\dot V(t,x)$ is uniformly continuous,
+    \end{itemize}
+    then $\lim\limits_{t\to{\infty}}\dot V(t,x)=0$.
+  \end{lemma}
+
+  \textbf{Proof of Lyapunov-like lemma}: 
+
+  From the first two conditions of $V(t,x)$, we know that $V(t,x)$ is non-increasing and bounded below. Hence, it converges to some finite value $V_\infty$ as $t \to \infty$, i.e., $\lim\limits_{t\to\infty}V(t,x)=V_0$.
+
+  With the third condition, by Barbalat's lemma, we have $\lim\limits_{t\to\infty}\dot V(t,x)=0$.
+\end{frame}
+
+\begin{frame}[t]{Problem 4 (Cont.)}{LaSalle-Yoshizawa Theorem}
+\begin{theorem}[LaSalle-Yoshizawa]
+  \small Let $x=0$ be an equilibrium point of $\dot x =f(t,x)$ and suppose that $f(t,x)$ is
+  piecewise continuous in $t$ and locally Lipschitz in $x$ and uniformly in $t$. Let $V(t,x)$ be a continuously differentiable function such that $\forall t \ge 0, \ x \in \mathbb{R}^n$
+  \begin{align*}
+      &\alpha_1(\|x\|) \le V(t,x) \le \alpha_2(\|x\|) \\
+      \dot{V} = &\frac{\partial V}{\partial t} + \frac{\partial V}{\partial x} f(t,x) \le -W(x) \le 0
+  \end{align*}
+  where $\alpha_1(\cdot)$ and $\alpha_2(\cdot)$ are class $\mathcal{K}_{\infty}$ functions and $W(x)$ is a continuous function. Then the solutions of $\dot{x}=f(t,x)$ satisfy
+  \begin{equation*}
+      \lim\limits_{t\to{\infty}}W(x(t))=0
+  \end{equation*}
+  In addition, if $W(x)$ is positive definite, $x=0$ is globally uniformly asymptotically stable.
+\end{theorem}
+
+{\bf Basic idea:}
+  {\footnotesize\[\begin{matrix}
+    \text{Barbalat's lemma}&f\ \text{has finite limit} & \dot{f}\ \text{is uniformly continuous} & \implies & \dot{f}\to 0\\
+    &\Updownarrow & \Updownarrow & &\\
+    \text{LaSalle-Yoshizawa Theorem}&\int^t_0  W (x (\tau)) \mathrm{d} \tau\ \text{has finite limit} & W\ \text{is uniformly continuous w.r.t.}\ t & \implies & W(x(t))\to 0\\
+    &\Uparrow &\Uparrow && \\
+    & \int^t_0  W (x (\tau)) \mathrm{d} \tau\ & W\ \text{is uniformly continuous w.r.t.}\ x&&\\
+    &\text{is non-decreasing and upper bounded}&x\ \text{is uniformly continuous w.r.t.}\ t &&
+  \end{matrix}\]}
+\end{frame}
+
+\begin{frame}[t]{Problem 4 (Cont.)}{LaSalle-Yoshizawa Theorem}
+  \textbf{Basic idea:}
+    {\footnotesize\[\begin{matrix}
+      \text{Barbalat's lemma}&f\ \text{has finite limit} & \dot{f}\ \text{is uniformly continuous} & \implies & \dot{f}\to 0\\
+      &\Updownarrow & \Updownarrow & &\\
+      \text{LaSalle-Yoshizawa Theorem}&\int^t_0  W (x (\tau)) \mathrm{d} \tau\ \text{has finite limit} & W\ \text{is uniformly continuous w.r.t.}\ t & \implies & W(x(t))\to 0\\
+      &\Uparrow &\Uparrow && \\
+      & \int^t_0  W (x (\tau)) \mathrm{d} \tau\ & W\ \text{is uniformly continuous w.r.t.}\ x&&\\
+      &\text{is non-decreasing and upper bounded}&x\ \text{is uniformly continuous w.r.t.}\ t &&
+    \end{matrix}\]}
+ 
+    Since $\dot{V} \le -W(x) \le 0$, integrating both sides yields $V(t)-V(0) \le -\int^t_0W(x(\tau))\mathrm{d}\tau$, i.e.,
+  \begin{equation*}
+      \int^t_0W(x(\tau))\mathrm{d}\tau \le V(0,x)-V(t,x) \le V(0,x).
+  \end{equation*}
+  
+  This implies $\int^t_0W(x(\tau))\mathrm{d}\tau$ has an upper bound. 
+  
+  Besides, $W(x) \ge 0$, which means $\int^t_0W(x(\tau))\mathrm{d}\tau$ is non-decreasing. 
+  
+  Thus, $\int^t_0W(x(\tau))\mathrm{d}\tau$ has a finite limit.
+  
+  \end{frame}
+
+\begin{frame}[t]{Problem 4 (Cont.)}{LaSalle-Yoshizawa Theorem}
+  \textbf{Basic idea:}
+    {\footnotesize\[\begin{matrix}
+      \text{Barbalat's lemma}&f\ \text{has finite limit} & \dot{f}\ \text{is uniformly continuous} & \implies & \dot{f}\to 0\\
+      &\Updownarrow & \Updownarrow & &\\
+      \text{LaSalle-Yoshizawa Theorem}&\int^t_0  W (x (\tau)) \mathrm{d} \tau\ \text{has finite limit} & W\ \text{is uniformly continuous w.r.t.}\ t & \implies & W(x(t))\to 0\\
+      &\Uparrow &\Uparrow && \\
+      & \int^t_0  W (x (\tau)) \mathrm{d} \tau\ & W\ \text{is uniformly continuous w.r.t.}\ x&&\\
+      &\text{is non-decreasing and upper bounded}&x\ \text{is uniformly continuous w.r.t.}\ t &&
+    \end{matrix}\]}
+  
+     Since $\dot V \le 0$, and $\alpha_1(\|x\|) \le V(t,x) \le \alpha_2(\|x\|)$, then we have 
+  \begin{equation*}
+      \alpha_1(\|x\|) \le V(t,x) \le V(0,x),
+  \end{equation*}
+  where $\alpha_1(\|x\|)$ belongs to class $\mathcal{K}_\infty$, i.e., $\alpha_1(\|x\|)$ is strictly increasing. Thus, we have
+  \begin{equation*}
+      \|x(t)\| \le \alpha_1^{-1}(V(0,x(0))) \triangleq R.
+  \end{equation*}
+   Therefore, the domain of $W(x)$ is bounded and closed, i.e., the domain is a compact set. From the fact that \textit{every continuous function on a compact set is uniformly continuous}, $W(x)$ is uniformly continuous in $x$ on $\|x(t)\| \le R$.
+
+   Notice that $f(t,x)$ is locally Lipschitz in $x$ and uniformly in $t$, then we have, $\forall t_2 > t_1$,
+   \begin{equation*}
+       \|x(t_2) - x(t_1)\| = \left\| \int_{t_1}^{t_2} f(\tau, x(\tau)) \, \mathrm{d}\tau \right\| \leq L_R \int_{t_1}^{t_2} \| x(\tau) \| \, \mathrm{d}\tau \leq L_R R |t_2 - t_1|,
+   \end{equation*}
+   this implies $x(t)$ is uniformly continuous in $t$. Since $W(x)$ is uniformly continuous in $x$, thus, $W(x(t))$ is uniformly continuous in $t$.
+   From Barbalat's lemma, we have $\lim\limits_{t \to \infty}W(x(t))=0$.
+
+\end{frame}
+
+\begin{frame}[t]{Problem 4 (Cont.)}{Corollary}
+  \begin{corollary}
+    If $x\in \mathbb{L}_2\bigcap\mathbb{L}_{\infty}$ and $\dot x\in \mathbb{L}_{\infty}$, then $\lim\limits_{t\to\infty}x(t)=0$.
+  \end{corollary}
+  \textbf{Basic idea:} (The idea presented below is used for an extended version of the corollary above: If $x\in \mathbb{L}_2\bigcap\mathbb{L}_{\infty}$ and $\dot x\in \mathbb{L}_{\infty}$, then $\lim\limits_{t\to\infty}x(t)=0$.)
+
+  {\small\[\begin{matrix}
+    \text{Barbalat's lemma}&f\ \text{has finite limit} & \dot{f}\ \text{is uniformly continuous} & \implies & \dot{f}\to 0\\
+    &\Updownarrow & \Updownarrow & &\\
+    \text{Corollary}&\int^t_0  |x (\tau)|^p \mathrm{d} \tau\ \text{has finite limit} & x^p\ \text{is uniformly continuous in}\ t & \implies & x^p\to 0 \implies x\to 0\\
+    &\Uparrow &\Uparrow && \\
+    & x\in\mathbb{L}_p& \frac{\mathrm{d} x^p}{\mathrm{d} t}=px^{p-1}\dot{x}\ \text{is bounded}&\Leftarrow&x,\dot{x}\in \mathbf{L}_\infty
+  \end{matrix}\]}
+
+  The proof can be immediately constructed from the guidance above.
+\end{frame}
+
+\section{Problem 5}
+
+\begin{frame}[t]{Problem 5}
+  \begin{block}{}
+    Consider the following multi-dimensional system
+\begin{align*}
+\dot x = A x +B(u+\Theta^T\Phi(x))
+\end{align*}
+where $x\in\mathbb{R}^n$ is the state, $A\in\mathbb{R}^{n\times n}$, $B\in\mathbb{R}^{n\times m}$ are known matrices, $u\in\mathbb{R}^m$ is the control input, $\Phi(x)\in\mathbb{R}^{k}$ is a bounded function, and $\Theta\in \mathbb{R}^{k\times m}$ is an unknown constant matrix. Assume that $(A,B)$ is controllable.
+\begin{itemize}
+  \item[(a)] Design an adaptive control law to stabilize the system.
+  \item[(b)] Design an adaptive control law with adaptive $\sigma$-modification to stabilize the system.
+\end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}[t]{Problem 5 (a)}
+  \begin{block}{}
+\begin{align*}
+\dot x = A x +B(u+\Theta^T\Phi(x))
+\end{align*}
+\begin{proitemize}
+  \item[(a)] Design an adaptive control law to stabilize the system.
+\end{proitemize}
+  \end{block}
+
+\textbf{Solution:}
+
+If $\Theta$ is known, we can design the following control law:
+\begin{equation*}
+  u = Kx-\Theta^T\Phi(x)
+\end{equation*}
+where $K \in \mathbb{R}^{n \times m}$, then the system dynamic is as follow:
+\begin{align*}
+    \dot x = Ax+B(u+\Theta^T\Phi(x))=(A+BK)x
+\end{align*}
+Let $A+BK \triangleq A^*$, we can find a proper $K$ to make $A^*$ Hurwitz, since $(A,B)$ is controllable. 
+
+Since $\Theta$ is unknown, we modify the control law as follow:
+\begin{equation*}
+    u = Kx-\hat{\Theta}^T\Phi(x)
+\end{equation*}
+Then the system dynamic is as follow:
+\begin{align*}
+    \dot x = Ax+B(u+\Theta^T\Phi(x)) =(A+BK)x+B(\Theta^T\Phi(x)-\hat{\Theta}^T\Phi(x)), 
+\end{align*}
+\end{frame}
+
+\begin{frame}[t]{Problem 5 (a) (Cont.)}
+  Define $\Tilde{\Theta} \triangleq \hat{\Theta} - \Theta$, then the system can be written as 
+  \begin{equation*}
+    \dot x = A^*x-B\Tilde{\Theta}^T\Phi(x).
+\end{equation*}
+Consider the following Lyapunov function candidate
+\begin{equation*}
+    V=x^TPx+tr(\Tilde{\Theta}^T\Gamma^{-1}\Tilde{\Theta})
+\end{equation*}
+where $\Gamma\in \mathbb{R}^{k \times k},P\in \mathbb{R}^{n \times n}$ are positive definite and symmetric,
+and $P$ satisfies
+\begin{equation*}
+    PA^*+A^{*T}P=-Q
+\end{equation*}
+where $Q\in\mathbb{R}^{n \times n}$ is positive definite.
+
+The derivative of $V$ is shown below:
+\begin{align*}
+    \dot V &= \dot x^TPx+x^TP\dot x+2tr(\Tilde{\Theta}^T\Gamma^{-1}\hat{\Theta}) \\
+    &=(A^*x-B\Tilde{\Theta}^T\Phi(x))^TPx+x^TP(A^*x-B\Tilde{\Theta}^T\Phi(x))+2tr(\Tilde{\Theta}^T\Gamma^{-1}\dot{\hat{\Theta}}) \\
+    &=x^TA^{*T}Px-\Phi^T(x)\Tilde{\Theta}B^TPx+x^TPA^*x-x^TPB\Tilde{\Theta}^T\Phi(x)+2tr(\Tilde{\Theta}^T\Gamma^{-1}\dot{\hat{\Theta}}) \\
+    &=-x^TQx-2tr(\Tilde{\Theta}^T\Phi(x)x^TPB)+2tr(\Tilde{\Theta}^T\Gamma^{-1}\dot{\hat{\Theta}})\\
+    &=-x^TQx+2tr(\Tilde{\Theta}^T(\Gamma^{-1}\dot{\hat{\Theta}}-\Phi(x)x^TPB))
+\end{align*}
+\end{frame}
+
+\begin{frame}[t]{Problem 5 (a) (Cont.)}
+  where the fourth equality follows from
+\begin{align*}
+  \Phi^T(x)\Tilde{\Theta}B^TPx &= tr(\Phi^T(x)\Tilde{\Theta}B^TPx) &[scalar]\\
+  &=tr(x^TPB\Tilde{\Theta}^T\Phi(x))=x^TPB\Tilde{\Theta}^T\Phi(x)&[tr(A^T)=tr(A),scalar]\\
+  &=tr(\Tilde{\Theta}^T\Phi(x)x^TPB)&[tr(AB)=tr(BA)]
+\end{align*}
+  Let $\dot{\hat{\Theta}}=\Gamma\Phi(x)x^TPB$, then we have \[\dot V = -x^TQx \le 0,\] which implies $\forall t >0,\ V(t) \le V(0)$, i.e., $x, \ \Tilde{\Theta} \in \mathbb{L}_{\infty}$. From LaSalle-Yoshizawa Theorem, $\lim\limits_{t\to\infty}x^TQx=0$, i.e., $\lim\limits_{t\to\infty}x(t)=0$.
+\end{frame}
+
+\begin{frame}[t]{Problem 5 (b)}
+  \begin{block}{}
+\begin{itemize}
+  \item[(b)] Design an adaptive control law with adaptive $\sigma$-modification to stabilize the system.
+\end{itemize}
+  \end{block}
+
+\textbf{Solution:}
+Consider the adaptive control law with adaptive $\sigma$-modification:
+    \begin{equation*}
+        \dot{\hat{\Theta}}=\Gamma(\Phi(x)x^TPB-\Sigma(\hat{\Theta}-\hat{\Theta}_1)),
+    \end{equation*}
+    \begin{equation*}
+        \dot{\hat{\Theta}}_1=\Delta(\hat{\Theta}-\hat{\Theta}_1),
+    \end{equation*}
+    where $\Sigma$ and $\Delta$ are constant positive definite matrices, ${\hat{\Theta}}_1$ is the estimation of $\hat{\Theta}$.
+
+    Define $\Tilde{\Theta}_1=\hat{\Theta}_1-\Theta$. Consider the following Lyapunov function candidate
+    \begin{equation*}
+        V=x^TPx+tr(\Tilde{\Theta}^T\Gamma^{-1}\Tilde{\Theta})+tr(\Tilde{\Theta}_1^T\Sigma\Delta^{-1}\Tilde{\Theta}_1).
+    \end{equation*}
+    Then its derivative is
+    \begin{align*}
+        \dot V&=\dot x^TPx+x^TP\dot x+2tr(\Tilde{\Theta}^T\Gamma^{-1}\dot{\hat{\Theta}})+2tr(\Tilde{\Theta}_1^T\Sigma\Delta^{-1}\dot{\hat{\Theta}}_1) \\
+        &=-x^TQx+2tr(\Tilde{\Theta}^T(\Gamma^{-1}\dot{\hat{\Theta}}-\Phi(x)x^TPB))+2tr(\Tilde{\Theta}_1^T\Sigma\Delta^{-1}\dot{\hat{\Theta}}_1) \\
+        &=-x^TQx-2tr(\Tilde{\Theta}^T\Sigma(\hat{\Theta}-\hat{\Theta}_1))+2tr(\Tilde{\Theta}_1^T\Sigma(\hat{\Theta}-\hat{\Theta}_1)) \\
+        &=-x^TQx-2tr((\Tilde{\Theta}-\Tilde{\Theta}_1)^T\Sigma(\hat{\Theta}-\hat{\Theta}_1)) \\
+        &=-x^TQx-2tr((\Tilde{\Theta}-\Tilde{\Theta}_1)^T\Sigma(\Tilde{\Theta}-\Tilde{\Theta}_1)) \le 0,
+    \end{align*}
+  which implies $\forall t >0,\ V(t) \le V(0)$, i.e., $x, \ \Tilde{\Theta}, \ \Tilde{\Theta}_1 \in \mathbb{L}_{\infty}$. 
+  Thus $tr((\Tilde{\Theta}-\Tilde{\Theta}_1)^T\Sigma(\Tilde{\Theta}-\Tilde{\Theta}_1))$ is bounded. From LaSalle-Yoshizawa Theorem, $\lim\limits_{t\to\infty}x^TQx=0$, i.e., $\lim\limits_{t\to\infty}x(t)=0$.
+\end{frame}
+
+\begin{frame}[t]{Acknowledgments}
+  Thanks Xinlu Yan and Yude Li for providing the \TeX{} source code of their homework to me.
+\end{frame}
+
+% \section*{Summary}
+
+% \begin{frame}{Summary}
+
+%   % Keep the summary *very short*.
+%   \begin{itemize}
+%   \item
+%     The \alert{first main message} of your talk in one or two lines.
+%   \item
+%     The \alert{second main message} of your talk in one or two lines.
+%   \item
+%     Perhaps a \alert{third message}, but not more than that.
+%   \end{itemize}
+  
+%   % The following outlook is optional.
+%   \vskip0pt plus.5fill
+%   \begin{itemize}
+%   \item
+%     Outlook
+%     \begin{itemize}
+%     \item
+%       Something you haven't solved.
+%     \item
+%       Something else you haven't solved.
+%     \end{itemize}
+%   \end{itemize}
+% \end{frame}
+
+
+
+% All of the following is optional and typically not needed. 
+% \appendix
+% \section<presentation>*{\appendixname}
+% \subsection<presentation>*{For Further Reading}
+
+% \begin{frame}[allowframebreaks]
+%   \frametitle<presentation>{For Further Reading}
+    
+%   \begin{thebibliography}{10}
+    
+%   \beamertemplatebookbibitems
+%   % Start with overview books.
+
+%   \bibitem{Author1990}
+%     A.~Author.
+%     \newblock {\em Handbook of Everything}.
+%     \newblock Some Press, 1990.
+ 
+    
+%   \beamertemplatearticlebibitems
+%   % Followed by interesting articles. Keep the list short. 
+
+%   \bibitem{Someone2000}
+%     S.~Someone.
+%     \newblock On this and that.
+%     \newblock {\em Journal of This and That}, 2(1):50--100,
+%     2000.
+%   \end{thebibliography}
+% \end{frame}
+
+\end{document}
+
+
