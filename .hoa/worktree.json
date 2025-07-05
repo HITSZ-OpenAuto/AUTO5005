@@ -1,0 +1,107 @@
+{
+  ".github/workflows/trigger-workflow.yml": {
+    "size": 2657,
+    "time": 1751724745,
+    "hash": "af5c19b565626503eb26889e3f70498f767194ed"
+  },
+  "LICENSE": {
+    "size": 20844,
+    "time": 1718130737,
+    "hash": "709f951e9e85f309a87133fad8909930e87a071a"
+  },
+  "README.md": {
+    "size": 5137,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "assignments/.gitkeep": {
+    "size": 0,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "assignments/2024/2linkarm.png": {
+    "size": 49887,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "assignments/2024/Homework-20241121.pdf": {
+    "size": 274130,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "assignments/2024/Homework-20241121.tex": {
+    "size": 14260,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "assignments/2024/wjd_answer/hw4nac.pdf": {
+    "size": 456025,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "assignments/2024/wjd_answer/hw4nac.tex": {
+    "size": 37194,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "assignments/2024/wjd_answer/nac_simulation.m": {
+    "size": 1411,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "exams/.gitkeep": {
+    "size": 0,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "exams/2016卷子.pdf": {
+    "size": 211451,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "exams/2016答案.pdf": {
+    "size": 160006,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "exams/2017卷子.pdf": {
+    "size": 479809,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "exams/2017非线性与自适应控制试卷.pdf": {
+    "size": 3414280,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "exams/2024试题.pdf": {
+    "size": 133034,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "notes/.gitkeep": {
+    "size": 0,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "notes/2019-HWK-NAC-Notebook.pdf": {
+    "size": 434995,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "notes/2019-HWK-NAC_Additional Q&A.pdf": {
+    "size": 103496,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "slides/.gitkeep": {
+    "size": 0,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  },
+  "tag.txt": {
+    "size": 104,
+    "time": 1737523193,
+    "hash": "20c3f9a338a66acda5d1531d6aafa7fd19e54853"
+  }
+}
