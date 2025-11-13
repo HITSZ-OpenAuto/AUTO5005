@@ -1,0 +1,108 @@
+ID: "AUTO5005"
+SimilarID: []
+Name: "非线性与自适应控制"
+CourseProperty:
+  - Year: "2021_2022"
+    Major:
+      - Name: ["自动化"]
+        Degree: "本"
+    GradeSemesters:
+      - Grade: "大四"
+        Semester: "秋"
+    CourseType: "限选"
+    CourseID: "AUTO5005"
+    CourseName: "非线性与自适应控制"
+    Credit: "2.0"
+    CourseHour: "32.0"
+    GPAInfluence: "GPA"
+    GroupCourse:
+      Link: ""
+      Desc: ""
+      Name: ""
+      Ids: ["", "", ""]
+    GradeComposition:
+      - Name: "平时成绩"
+        Percentage: "30"
+      - Name: "期末考试"
+        Percentage: "70"
+    CourseHourComposition:
+      - Name: "授课"
+        Hour: "32"
+  - Year: "2022_2023"
+    Major:
+      - Name: ["自动化"]
+        Degree: "本"
+    GradeSemesters:
+      - Grade: "大四"
+        Semester: "秋"
+    CourseType: "限选"
+    CourseID: "AUTO5005"
+    CourseName: "非线性与自适应控制"
+    Credit: "2.0"
+    CourseHour: "32.0"
+    GPAInfluence: "GPA"
+    GroupCourse:
+      Link: ""
+      Desc: ""
+      Name: ""
+      Ids: ["", "", ""]
+    GradeComposition:
+      - Name: "平时成绩"
+        Percentage: "30"
+      - Name: "期末考试"
+        Percentage: "70"
+    CourseHourComposition:
+      - Name: "授课"
+        Hour: "32"
+  - Year: "2023_2024"
+    Major:
+      - Name: ["自动化"]
+        Degree: "本"
+    GradeSemesters:
+      - Grade: "大四"
+        Semester: "秋"
+    CourseType: "限选"
+    CourseID: "AUTO5005"
+    CourseName: "非线性与自适应控制"
+    Credit: "2.0"
+    CourseHour: "32.0"
+    GPAInfluence: "GPA"
+    GroupCourse:
+      Link: ""
+      Desc: ""
+      Name: ""
+      Ids: ["", "", ""]
+    GradeComposition:
+      - Name: "平时成绩"
+        Percentage: "30"
+      - Name: "期末考试"
+        Percentage: "70"
+    CourseHourComposition:
+      - Name: "授课"
+        Hour: "32"
+  - Year: "2024_2025"
+    Major:
+      - Name: ["自动化"]
+        Degree: "本"
+    GradeSemesters:
+      - Grade: "大四"
+        Semester: "秋"
+    CourseType: "限选"
+    CourseID: "AUTO5005"
+    CourseName: "非线性与自适应控制"
+    Credit: "2.0"
+    CourseHour: "32.0"
+    GPAInfluence: "GPA"
+    GroupCourse:
+      Link: ""
+      Desc: ""
+      Name: ""
+      Ids: ["", "", ""]
+    GradeComposition:
+      - Name: "平时成绩"
+        Percentage: "30"
+      - Name: "期末考试"
+        Percentage: "70"
+    CourseHourComposition:
+      - Name: "授课"
+        Hour: "32"
