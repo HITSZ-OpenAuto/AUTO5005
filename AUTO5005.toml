@@ -1,0 +1,124 @@
+course_name = "非线性与自适应控制"
+course_code = "AUTO5005"
+notices = ""
+
+[[lecturers]]
+name = "梅杰"
+
+  [[lecturers.reviews]]
+  content = """
+上课使用 iPad 手写投屏，节奏飞快。
+课后会更新本年度的手写讲义，但并不及时。建议同学们看往年讲义预习。
+偶尔以提问方式点名。
+"""
+  author = { name = "", link = "", date = "" }
+
+[[textbooks]]
+title = "Applied Nonlinear Control"
+book_author = "J-J E. Slotine and Weiping Li"
+publisher = "机械工业出版社"
+edition = "English Edition, 2004"
+type = "reference"
+author = { name = "", link = "", date = "" }
+
+[[textbooks]]
+title = "Nonlinear Systems"
+book_author = "Hassan K. Khalil"
+publisher = "电子工业出版社"
+edition = "Third Eidition, 2007"
+type = "reference"
+author = { name = "", link = "", date = "" }
+
+[[textbooks]]
+title = "Robust and Adaptive Control with Aerospace Applications"
+book_author = "E. Lavertsky and K. Wise"
+publisher = "Springer-Verlag"
+edition = "2013"
+type = "reference"
+author = { name = "", link = "", date = "" }
+
+[[textbooks]]
+title = "Adaptive Control"
+book_author = "K.J. Åström and B. Wittenmark"
+publisher = "Dover Publications, INC. Mineola, New York"
+edition = "Second Edition, 2008"
+type = "reference"
+author = { name = "", link = "", date = "" }
+
+[[textbooks]]
+title = "Nonlinear and Adaptive Control Design"
+book_author = "M. Krstic, I. Kanellakopoulos, and P. Kokotovic"
+publisher = "John Wiley and Sons"
+edition = "1995"
+type = "reference"
+author = { name = "", link = "", date = "" }
+
+[[textbooks]]
+title = "Adaptive Control Tutorial"
+book_author = "P. Ioannou and B. Fidan"
+publisher = "SIAM Press, Philadelphia"
+edition = "2006"
+type = "reference"
+author = { name = "", link = "", date = "" }
+
+[[textbooks]]
+title = "Nonlinear Systems: Analysis, Stability, and Control"
+book_author = "Shankar Sastry"
+publisher = "世界图书出版社"
+edition = "1999"
+type = "reference"
+author = { name = "", link = "", date = "" }
+
+[[textbooks]]
+title = "Stable Adaptive Systems"
+book_author = "K. Narendra and A. Annaswamy"
+publisher = "Dover Publications, INC. Mineola, New York"
+edition = "2005"
+type = "reference"
+author = { name = "", link = "", date = "" }
+
+[[online_resources]]
+title = "Oliver Wu & Hye's《非线性与自适应控制》笔记"
+url = "https://oliverwu.top/nac.html"
+description = "课程以讲义为主，可参考此笔记。"
+author = { name = "", link = "", date = "" }
+
+[[course]]
+content = """
+（认真看这一节，这可是一道考题）
+
+第一、二讲 绪论
+主要内容是： 非线性控制系统概述(什么是非线性系统与自适应控制、为什么要研究它们)、非线性控制系统的建模、非线性常微分方程的解（存在、唯一性，主要是 Lipschitz 条件）。这两讲以了解为主。
+
+第三讲 自治系统的稳定性分析
+主要内容是：自治系统 Lyapunov 稳定性的概念（稳定性、渐近稳定、全局渐近稳定、指数稳定）、正定函数、自治系统的 Lyapunov 稳定性定理、LaSalle 不变集原理（分析原点与极限环的稳定性）、线性系统与线性化（利用局部线性化系统的 Jacobian）
+
+第四讲 非自治系统的稳定性分析
+主要内容是：比较函数、非自治系统稳定性的概念（除了上述稳定性之外，特别注意新引入的一致稳定）、时变正定函数与非自治系统稳定性定理（注意时变函数正定性的判别）、线性时变系统（了解为主） 、Barbalat 引理及其推论（重点，需掌握证明）、有界性和最终有界性（第六讲用到）、输入-状态稳定性（第六讲用到）
+
+第五讲 自适应控制
+主要内容：自适应控制的概念与类型（简答题考查）、各种各样的模型参考自适应控制（线性标量系统[直接型、间接型]、具有非线性项的标量系统、多输入多输出（MIMO）系统）、无参考模型的自适应控制设计、鲁棒自适应控制（死区修正、𝜎-修正、α-修正、自适应 𝜎-修正，需要会推广至多输入多输出（MIMO）系统与时变参数情形）、预设性能控制（2024 新加入）
+
+第六讲 非线性控制系统设计
+主要内容是：反馈控制问题的类别（状态反馈镇定问题、输出反馈镇定问题、跟踪问题）、反馈线性化、各种各样的滑模控制（镇定问题、跟踪问题、有不确定性的跟踪问题、有外部干扰）、反步法（基本形式、自适应反步法及减少过参数化、有调节函数（tuning function）的自适应反步法）
+
+第七讲 实例：机械臂控制
+主要内容是：将前面讲解过的方法应用到机械臂的控制上，包括基于 Lyapunov 分析的位置控制（主要依靠反馈线性化） 、跟踪控制（使用滑模控制、自适应滑模控制、反步法滑模控制与预设性能控制）
+"""
+author = { name = "Oliver Wu", link = "https://github.com/OliverWu515", date = "2025-01-01" }
+
+[[exam]]
+content = """
+期末考试为闭卷、不允许携带计算器（closed-book, closed-note, closed-calculator exam）。实际上也用不到计算器。
+题量很大，不过基本上是上课讲过的例子或者提问的变种（讲义上标有 Q 字样且不给出明确解答的问题）。给分非常宽松（2024 年，98 分排名 7/53），大家即使不太笃定也要把大致思路写上。
+"""
+author = { name = "", link = "", date = "" }
+
+lab = []
+advice = []
+schedule = []
+related_links = []
+
+[[misc]]
+content = "可见校内网盘 Lec1（Introduction）。"
+author = { name = "", link = "", date = "" }
