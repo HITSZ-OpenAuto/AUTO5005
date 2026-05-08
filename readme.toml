@@ -8,10 +8,11 @@ description = """
 主要内容章节请认真阅读，往年曾作为考题出现。
 """
 
-[[lecturers]]
+[lecturers]
+[[lecturers.items]]
 name = "梅杰"
 
-[[lecturers.reviews]]
+[[lecturers.items.reviews]]
 content = """
 上课使用 iPad 手写投屏，节奏飞快。
 课后会更新本年度的手写讲义，但并不及时。建议同学们看往年讲义预习。
