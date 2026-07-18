@@ -1,7 +1,6 @@
 course_name = "非线性与自适应控制"
-repo_type = "normal"
 course_code = "AUTO5005"
-
+repo_type = "normal"
 description = """
 本课程以讲义为主。
 可见校内网盘 Lec1（Introduction）。
@@ -9,6 +8,7 @@ description = """
 """
 
 [lecturers]
+
 [[lecturers.items]]
 name = "梅杰"
 
@@ -19,7 +19,6 @@ content = """
 偶尔以提问方式点名。
 """
 author = { name = "Oliver Wu", link = "https://github.com/OliverWu515", date = "2025-01" }
-
 
 [[sections]]
 title = "教材"
