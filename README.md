@@ -1,35 +1,45 @@
 # AUTO5005 - 非线性与自适应控制
+<!-- TOML-META: repo_type="normal" -->
+<!-- TOML-BADGES: source="grades_summary" -->
 
-![考查课](https://img.shields.io/badge/%E8%80%83%E6%9F%A5%E8%AF%BE-green)
-![学分](https://img.shields.io/badge/%E5%AD%A6%E5%88%86-2-moccasin)
-![本研共通](https://img.shields.io/badge/本研共通-lightskyblue)
-
-![成绩构成](https://img.shields.io/badge/%E6%88%90%E7%BB%A9%E6%9E%84%E6%88%90-gold)
+![成绩构成](https://img.shields.io/badge/成绩构成-gold)
 ![平时成绩30%](https://img.shields.io/badge/平时成绩-30%25-wheat)
-![期末考试70%](https://img.shields.io/badge/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95-70%25-wheat)
+![期末考试70%](https://img.shields.io/badge/期末考试-70%25-wheat)
 
-## 课程基本信息
-
+本课程以讲义为主。
 可见校内网盘 Lec1（Introduction）。
+主要内容章节请认真阅读，往年曾作为考题出现。
 
-### 教材与参考书
+## 授课教师
+
+<!-- TOML-LECTURERS: part="items" -->
+- 梅杰
+  <!-- TOML-ITEM: id="review-梅杰-1" -->
+  - 上课使用 iPad 手写投屏，节奏飞快。
+  - 课后会更新本年度的手写讲义，但并不及时。建议同学们看往年讲义预习。
+  - 偶尔以提问方式点名。
+    > 文 / [Oliver Wu](https://github.com/OliverWu515)，2025-01
+
+## 教材
+<!-- TOML-SECTION: title="教材" -->
+
+<!-- TOML-ITEM: id="item-教材-1" -->
 
 以讲义为主。可参考：[Oliver Wu & Hye's《非线性与自适应控制》笔记](https://oliverwu.top/nac.html)。
 
-{{% details title="参考书（主要是前五本）" closed="true" %}}
+- **Applied Nonlinear Control**（J-J E. Slotine and Weiping Li / 机械工业出版社 / English Edition / textbook）
+- **Nonlinear Systems**（Hassan K. Khalil / 电子工业出版社 / Third Edition / textbook）
+- **Robust and Adaptive Control with Aerospace Applications**（E. Lavertsky and K. Wise / Springer-Verlag / 2013 / textbook）
+- **Adaptive Control**（K.J. Åström and B. Wittenmark / Dover Publications, INC. / Second Edition / textbook）
+- **Nonlinear and Adaptive Control Design**（M. Krstic, I. Kanellakopoulos, and P. Kokotovic / John Wiley and Sons / 1995 / textbook）
+- **Adaptive Control Tutorial**（P. Ioannou and B. Fidan / SIAM Press / 2006 / textbook）
+- **Nonlinear Systems: Analysis, Stability, and Control**（Shankar Sastry / 世界图书出版社 / 1999 / textbook）
+- **Stable Adaptive Systems**（K. Narendra and A. Annaswamy / Dover Publications, INC. / 2005 / textbook）
 
-1. J-J E. Slotine and Weiping Li, Applied Nonlinear Control, English Edition, 机械工业出版社, 2004
-2. Hassan K. Khalil, Nonlinear Systems, Third Eidition, 电子工业出版社, 2007
-3. E. Lavertsky and K. Wise, Robust and Adaptive Control with Aerospace Applications, Springer-Verlag, 2013
-4. K.J. Åström and B. Wittenmark, Adaptive Control, Second Edition, Dover Publications, INC. Mineola, New York, 2008
-5. M. Krstic, I. Kanellakopoulos, and P. Kokotovic, Nonlinear and Adaptive Control Design, John Wiley and Sons, 1995.
-6. P. Ioannou and B. Fidan, Adaptive Control  Tutorial, SIAM Press, Philadelphia, 2006
-7. Shankar Sastry, Nonlinear Systems: Analysis, Stability, and Control, 世界图书出版社, 1999
-8. K. Narendra and A. Annaswamy, Stable Adaptive Systems, Dover Publications, INC. Mineola, New York, 2005.
+## 课程内容
+<!-- TOML-SECTION: title="课程内容" -->
 
-{{% /details %}}
-
-### 主要内容
+<!-- TOML-ITEM: id="item-课程内容-1" -->
 
 （认真看这一节，这可是一道考题）
 
@@ -57,18 +67,10 @@
 主要内容是：将前面讲解过的方法应用到机械臂的控制上，包括基于 Lyapunov 分析的位置控制（主要依靠反馈线性化） 、跟踪控制（使用滑模控制、自适应滑模控制、反步法滑模控制与预设性能控制）
 {{% /details %}}
 
-> 文 / [Oliver Wu](https://github.com/OliverWu515), 2025.1
-
-## 授课教师
-
-- 梅杰
-  - 上课使用 iPad 手写投屏，节奏飞快。
-  - 课后会更新本年度的手写讲义，但并不及时。建议同学们看往年讲义预习。
-  - 偶尔以提问方式点名。
-
 ## 关于考试
+<!-- TOML-SECTION: title="关于考试" -->
+
+<!-- TOML-ITEM: id="item-关于考试-1" -->
 
 期末考试为闭卷、不允许携带计算器（closed-book, closed-note, closed-calculator exam）。实际上也用不到计算器。
 题量很大，不过基本上是上课讲过的例子或者提问的变种（讲义上标有 Q 字样且不给出明确解答的问题）。给分非常宽松（2024 年，98 分排名 7/53），大家即使不太笃定也要把大致思路写上。
-
-## 学习建议
