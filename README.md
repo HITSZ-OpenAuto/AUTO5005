@@ -1,10 +1,5 @@
 # AUTO5005 - 非线性与自适应控制
 <!-- TOML-META: repo_type="normal" -->
-<!-- TOML-BADGES: source="grades_summary" -->
-
-![成绩构成](https://img.shields.io/badge/成绩构成-gold)
-![平时成绩30%](https://img.shields.io/badge/平时成绩-30%25-wheat)
-![期末考试70%](https://img.shields.io/badge/期末考试-70%25-wheat)
 
 本课程以讲义为主。
 可见校内网盘 Lec1（Introduction）。
